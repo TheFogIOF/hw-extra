@@ -138,11 +138,16 @@ public class FriendsWeb {
     public static String getServer(Minecraft client) {
         String server = client.isSingleplayer() ? "singleplayer" : (client.getCurrentServer() != null ? client.getCurrentServer().ip : "unknown");
         if (client.getCurrentServer() != null) {
-            if (client.gui.getTabList().header != null) {
-                String header = client.gui.getTabList().header.getString();
-                if (header.contains("Лобби")) server = "Лобби " + extractAnarchyNumber(header);
-                if (header.contains("Лайт")) server = "Лайт " + extractAnarchyNumber(header);
-                if (header.contains("Классик")) server = "Классик " + extractAnarchyNumber(header);
+            try {
+                if (client.gui.getTabList().header != null) {
+                    String header = client.gui.getTabList().header.getString();
+                    if (header.contains("Лобби")) server = "Лобби " + extractAnarchyNumber(header);
+                    if (header.contains("Лайт")) server = "Лайт " + extractAnarchyNumber(header);
+                    if (header.contains("Классик")) server = "Классик " + extractAnarchyNumber(header);
+                }
+            } catch (Exception e) {
+                Main.LOGGER.info("Failed to get tab header.");
+                return server;
             }
         }
         return server;
