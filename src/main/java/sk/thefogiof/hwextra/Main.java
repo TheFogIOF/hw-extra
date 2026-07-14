@@ -38,6 +38,6 @@ public class Main implements ClientModInitializer {
             if (key.consumeClick()) client.setScreen(new HudSettingsScreen());
         });
 
-        //FeatureControl.register();
+        FeatureControl.register();
     }
 }
