@@ -36,7 +36,7 @@ public class MainConfig {
             try (Reader reader = new FileReader(CONFIG_PATH.toFile())) {
                 return GSON.fromJson(reader, MainConfig.class);
             } catch (IOException e) {
-                e.printStackTrace();
+                Main.LOGGER.info(e.getMessage());
             }
         }
         MainConfig config = new MainConfig();
