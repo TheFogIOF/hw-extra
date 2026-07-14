@@ -51,9 +51,6 @@ public class FriendsConfig {
                 }
             } catch (IOException e) {
                 Main.LOGGER.info(e.getMessage());
-                FriendsConfig config = new FriendsConfig();
-                config.save();
-                return config;
             }
         }
         FriendsConfig config = new FriendsConfig();
