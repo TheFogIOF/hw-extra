@@ -34,7 +34,13 @@ public class MainConfig {
     private static MainConfig load() {
         if (CONFIG_PATH.toFile().exists()) {
             try (Reader reader = new FileReader(CONFIG_PATH.toFile())) {
-                return GSON.fromJson(reader, MainConfig.class);
+                try {
+                    return GSON.fromJson(reader, MainConfig.class);
+                } catch (Exception e) {
+                    MainConfig config = new MainConfig();
+                    config.save();
+                    return config;
+                }
             } catch (IOException e) {
                 Main.LOGGER.info(e.getMessage());
             }
