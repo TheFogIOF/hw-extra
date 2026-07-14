@@ -27,9 +27,7 @@ public class FriendsConfig {
         if (instance == null) instance = load();
 
         Friends.friends.clear();
-        instance.friends.forEach((name, apiKey) -> {
-            Friends.friends.add(new Friend(name, apiKey));
-        });
+        instance.friends.forEach((name) -> Friends.friends.add(new Friend(name)));
 
         return instance;
     }
