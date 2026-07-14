@@ -8,6 +8,7 @@ import net.minecraft.client.KeyMapping;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sk.thefogiof.hwextra.feature.BuyerExpParser;
 import sk.thefogiof.hwextra.feature.FriendsWeb;
 import sk.thefogiof.hwextra.register.*;
 import sk.thefogiof.hwextra.screen.HudSettingsScreen;
@@ -29,6 +30,7 @@ public class Main implements ClientModInitializer {
         ApiKey.register();
         Huds.register();
         AutoSaleParser.registerEvent();
+        BuyerExpParser.registerEvent();
         Commands.register();
         FriendsWeb.register();
 
@@ -36,6 +38,6 @@ public class Main implements ClientModInitializer {
             if (key.consumeClick()) client.setScreen(new HudSettingsScreen());
         });
 
-        FeatureControl.register();
+        //FeatureControl.register();
     }
 }
