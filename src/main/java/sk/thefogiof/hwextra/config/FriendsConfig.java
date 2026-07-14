@@ -44,7 +44,10 @@ public class FriendsConfig {
             try (Reader reader = new FileReader(CONFIG_PATH.toFile())) {
                 return GSON.fromJson(reader, FriendsConfig.class);
             } catch (IOException e) {
-                e.printStackTrace();
+                Main.LOGGER.info(e.getMessage());
+                FriendsConfig config = new FriendsConfig();
+                config.save();
+                return config;
             }
         }
         FriendsConfig config = new FriendsConfig();
