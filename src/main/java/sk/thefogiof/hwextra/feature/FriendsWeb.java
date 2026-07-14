@@ -31,9 +31,7 @@ public class FriendsWeb {
             }
         });
 
-        ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
-            FriendsWeb.leave();
-        });
+        ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> FriendsWeb.leave());
 
         ClientTickEvents.END_CLIENT_TICK.register(FriendsWeb::sendFriendWebRequest);
     }
