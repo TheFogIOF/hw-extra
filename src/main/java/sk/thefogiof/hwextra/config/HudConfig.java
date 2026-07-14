@@ -39,7 +39,7 @@ public class HudConfig {
                     return config;
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                Main.LOGGER.info(e.getMessage());
             }
         }
         HudConfig config = new HudConfig();
