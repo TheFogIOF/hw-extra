@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "hwextra",
+  "version": "${version}",
+  "name": "HW Extra",
+  "description": "",
+  "authors": ["TheFogIOF"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/hwextra/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "sk.thefogiof.hwextra.Main"
+    ]
+  },
+  "mixins": [
+    "hwextra.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
