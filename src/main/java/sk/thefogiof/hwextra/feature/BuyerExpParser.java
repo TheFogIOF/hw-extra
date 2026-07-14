@@ -1,7 +1,6 @@
 package sk.thefogiof.hwextra.feature;
 
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
-import net.minecraft.client.Minecraft;
 import sk.thefogiof.hwextra.Main;
 import sk.thefogiof.hwextra.register.Configs;
 
