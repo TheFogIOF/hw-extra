@@ -3,7 +3,7 @@ package sk.thefogiof.hwextra.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.Minecraft;
+import sk.thefogiof.hwextra.Main;
 import sk.thefogiof.hwextra.model.HudPosition;
 
 import java.io.*;
