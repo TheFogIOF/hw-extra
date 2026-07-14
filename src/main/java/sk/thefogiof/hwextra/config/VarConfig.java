@@ -40,7 +40,7 @@ public class VarConfig {
                     return config;
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                Main.LOGGER.info(e.getMessage());
             }
         }
         VarConfig config = new VarConfig();
