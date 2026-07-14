@@ -59,7 +59,7 @@ public class MainConfig {
                 GSON.toJson(this, writer);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            Main.LOGGER.info(e.getMessage());
         }
     }
 }
