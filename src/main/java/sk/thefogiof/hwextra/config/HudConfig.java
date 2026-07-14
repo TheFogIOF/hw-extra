@@ -31,7 +31,13 @@ public class HudConfig {
     private static HudConfig load() {
         if (CONFIG_PATH.toFile().exists()) {
             try (Reader reader = new FileReader(CONFIG_PATH.toFile())) {
-                return GSON.fromJson(reader, HudConfig.class);
+                try {
+                    return GSON.fromJson(reader, HudConfig.class);
+                } catch (Exception e) {
+                    HudConfig config = new HudConfig();
+                    config.save();
+                    return config;
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
