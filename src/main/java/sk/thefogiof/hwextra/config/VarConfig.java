@@ -3,6 +3,7 @@ package sk.thefogiof.hwextra.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import sk.thefogiof.hwextra.Main;
 
 import java.io.FileReader;
 import java.io.IOException;
