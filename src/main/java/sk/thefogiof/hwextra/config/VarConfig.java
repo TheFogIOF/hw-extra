@@ -32,7 +32,13 @@ public class VarConfig {
     private static VarConfig load() {
         if (CONFIG_PATH.toFile().exists()) {
             try (Reader reader = new FileReader(CONFIG_PATH.toFile())) {
-                return GSON.fromJson(reader, VarConfig.class);
+                try {
+                    return GSON.fromJson(reader, VarConfig.class);
+                } catch (Exception e) {
+                    VarConfig config = new VarConfig();
+                    config.save();
+                    return config;
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
