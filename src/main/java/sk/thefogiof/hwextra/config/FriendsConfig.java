@@ -19,7 +19,7 @@ public class FriendsConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("hwextra/friends.json");
 
-    public Map<String, String> friends = new HashMap<>();
+    public List<String> friends = new ArrayList<>();
 
     private static FriendsConfig instance;
 
