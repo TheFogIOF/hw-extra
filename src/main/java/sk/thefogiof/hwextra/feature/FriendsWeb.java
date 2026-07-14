@@ -61,7 +61,6 @@ public class FriendsWeb {
     }
 
     private static void handleResponse(String response) {
-        Main.LOGGER.info(response);
         try {
             JsonObject obj = GSON.fromJson(response, JsonObject.class);
             if (obj.has("type") && "friend_update".equals(obj.get("type").getAsString())) {
