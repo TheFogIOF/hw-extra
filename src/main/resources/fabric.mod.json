@@ -17,6 +17,7 @@
   "mixins": [
     "hwextra.mixins.json"
   ],
+  "accessWidener": "hwextra.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
