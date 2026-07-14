@@ -34,7 +34,7 @@ public class FriendCommand {
 
     private static int AddFriend(CommandContext<FabricClientCommandSource> ctx) {
         String name = StringArgumentType.getString(ctx, "value");
-        Configs.friendsConfig.friends.put(name, "");
+        Configs.friendsConfig.friends.add(name);
         Configs.friendsConfig.save();
         Friends.friends.add(new Friend(name));
         FriendsWeb.sendFriendWebRequest(ctx.getSource().getClient());
