@@ -42,7 +42,13 @@ public class FriendsConfig {
     private static FriendsConfig load() {
         if (CONFIG_PATH.toFile().exists()) {
             try (Reader reader = new FileReader(CONFIG_PATH.toFile())) {
-                return GSON.fromJson(reader, FriendsConfig.class);
+                try {
+                    return GSON.fromJson(reader, FriendsConfig.class);
+                } catch (Exception e) {
+                    FriendsConfig config = new FriendsConfig();
+                    config.save();
+                    return config;
+                }
             } catch (IOException e) {
                 Main.LOGGER.info(e.getMessage());
                 FriendsConfig config = new FriendsConfig();
