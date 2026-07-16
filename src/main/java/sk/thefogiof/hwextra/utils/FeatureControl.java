@@ -74,7 +74,6 @@ public class FeatureControl {
         pending.put(request.id(), future);
         String json = GSON.toJson(request);
         FeatureControlPayload.FeatureControlPacket packet = new FeatureControlPayload.FeatureControlPacket(json);
-        LOGGER.info(packet + " " + packet.type());
         ClientPlayNetworking.send(packet);
         return future
                 .orTimeout(5, TimeUnit.SECONDS)
