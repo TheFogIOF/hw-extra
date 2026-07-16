@@ -56,7 +56,6 @@ public class FeatureControl {
             sendRequest()
                 .thenAcceptAsync(response -> {
                     if (response.isOk()) {
-                        LOGGER.info(response.toString());
                         BLOCKLIST.addAll(response.blocklist());
                     } else {
                         LOGGER.warn(response.error());
